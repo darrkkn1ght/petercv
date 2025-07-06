@@ -1238,8 +1238,8 @@
                     <span class="stat-label">Month Contract Ready</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-target="2800">0</span>
-                    <span class="stat-label">Budget Match ($)</span>
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Client Satisfaction (%)</span>
                 </div>
             </div>
         </div>
@@ -1617,7 +1617,7 @@
                             <input type="email" name="email" class="form-input" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="budget" class="form-input" placeholder="Project Budget" required>
+                            <input type="text" name="subject" class="form-input" placeholder="Project Type" required>
                         </div>
                         <div class="form-group">
                             <textarea name="message" class="form-input form-textarea" placeholder="Tell me about your project..." required></textarea>
@@ -1668,7 +1668,7 @@
                 </a>
             </div>
             <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-                Available for Remote Contracts • $2,800 Budget Match • 3-Month Duration
+                Available for Remote Contracts • Full-Stack Development • React & PHP Specialist
             </p>
             <p style="color: var(--text-secondary); font-size: 0.9rem;">
                 © 2025 Adewale Peter Tomiwa. Built with passion for innovation.
@@ -1960,7 +1960,7 @@
             // Get form data
             const name = this.querySelector('input[name="name"]').value.trim();
             const email = this.querySelector('input[name="email"]').value.trim();
-            const budget = this.querySelector('input[name="budget"]').value.trim();
+            const subject = this.querySelector('input[name="subject"]').value.trim();
             const message = this.querySelector('textarea[name="message"]').value.trim();
             
             // Validation
@@ -1969,8 +1969,8 @@
                 error = 'Name must be at least 2 characters.';
             } else if (!/^\S+@\S+\.\S+$/.test(email)) {
                 error = 'Please enter a valid email address.';
-            } else if (!budget) {
-                error = 'Project budget is required.';
+            } else if (!subject) {
+                error = 'Project type is required.';
             } else if (!message) {
                 error = 'Please enter a message.';
             }
