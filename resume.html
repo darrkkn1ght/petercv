@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adewale Peter Tomiwa - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-blue: #00d4ff;
+            --neon-green: #39ff14;
+            --neon-purple: #bf00ff;
+            --dark-bg: #0a0a0a;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --accent-gradient: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--neon-blue);
+        }
+
+        .name {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.3rem;
+            color: var(--neon-blue);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            color: var(--neon-green);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--neon-green);
+            padding-bottom: 0.5rem;
+        }
+
+        .summary {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .skill-category h4 {
+            color: var(--neon-blue);
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', monospace;
+        }
+
+        .skill-list {
+            list-style: none;
+            color: var(--text-secondary);
+        }
+
+        .skill-list li {
+            margin-bottom: 0.3rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '▸';
+            color: var(--neon-green);
+            position: absolute;
+            left: 0;
+        }
+
+        .experience-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 3px solid var(--neon-blue);
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            color: var(--neon-blue);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .company {
+            color: var(--neon-green);
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .duration {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievements {
+            list-style: none;
+            color: var(--text-secondary);
+        }
+
+        .achievements li {
+            margin-bottom: 0.3rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .achievements li::before {
+            content: '•';
+            color: var(--neon-green);
+            position: absolute;
+            left: 0;
+        }
+
+        .education {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--neon-purple);
+        }
+
+        .degree {
+            font-size: 1.2rem;
+            color: var(--neon-purple);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .school {
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .project-title {
+            color: var(--neon-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tech {
+            color: var(--neon-green);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .name {
+                color: #00d4ff;
+                -webkit-text-fill-color: #00d4ff;
+            }
+            
+            .section-title {
+                color: #39ff14;
+            }
+            
+            .job-title, .project-title {
+                color: #00d4ff;
+            }
+            
+            .company {
+                color: #39ff14;
+            }
+            
+            .degree {
+                color: #bf00ff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="name">ADEWALE PETER TOMIWA</h1>
+        <p class="title">PHP Developer & Full-Stack Engineer</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📧</span>
+                <span>peterandy888@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <span>📱</span>
+                <span>+234 812 974 4447</span>
+            </div>
+            <div class="contact-item">
+                <span>📍</span>
+                <span>Ibadan, Nigeria</span>
+            </div>
+            <div class="contact-item">
+                <span>🔗</span>
+                <span>github.com/darrkkn1ght</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+        <p class="summary">
+            Passionate PHP Developer and Full-Stack Engineer with expertise in React, React Native, and modern web technologies. 
+            Experienced in building responsive, scalable applications with a focus on clean code and user experience. 
+            Strong background in OOP, MVC architecture, and RESTful API development. Available for remote contracts with 
+            a $2,800 budget match and 3-month duration commitment.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">TECHNICAL SKILLS</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Frontend Development</h4>
+                <ul class="skill-list">
+                    <li>React (Hooks, Routing)</li>
+                    <li>React Native</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>Tailwind CSS</li>
+                    <li>HTML5 & CSS3</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Backend & APIs</h4>
+                <ul class="skill-list">
+                    <li>PHP (OOP, MVC)</li>
+                    <li>MySQL</li>
+                    <li>RESTful APIs</li>
+                    <li>Laravel/Symfony</li>
+                    <li>Firebase</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Tools & Platforms</h4>
+                <ul class="skill-list">
+                    <li>Git & GitHub</li>
+                    <li>Render/Deployment</li>
+                    <li>Framer</li>
+                    <li>VS Code</li>
+                    <li>Postman</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+        
+        <div class="experience-item">
+            <div class="job-title">Full Stack Developer (Freelance / Personal Projects)</div>
+            <div class="company">Remote</div>
+            <div class="duration">Jan 2024 – Present</div>
+            <ul class="achievements">
+                <li>Built and deployed 5+ full-stack web and mobile applications using React, React Native, PHP, and MySQL</li>
+                <li>Developed Habitify - Multi-screen React Native app for habit tracking with local storage</li>
+                <li>Created ShopNow - E-commerce mobile app with product search and cart management</li>
+                <li>Built Taskly - Modern landing page with smooth animations and form validation</li>
+                <li>Developed Salesly - Admin dashboard with real-time data visualization</li>
+                <li>Implemented responsive design, authentication, and API integration across all projects</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Intern – Accounting Office (IT Placement)</div>
+            <div class="company">University of Ibadan Staff School, Ibadan</div>
+            <div class="duration">March 2025 – May 2025</div>
+            <ul class="achievements">
+                <li>Assisted with daily spreadsheet tasks and invoice record management</li>
+                <li>Gained real-world exposure to institutional systems and workflow processes</li>
+                <li>Part of Computer Science IT program providing practical experience</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">EDUCATION</h2>
+        <div class="education">
+            <div class="degree">B.Sc. Computer Science (In View)</div>
+            <div class="school">University of Ibadan, Nigeria</div>
+            <div class="duration">2022 – 2026 (Expected)</div>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+                <strong>Relevant Coursework:</strong> Computer Architecture, Systems Analysis, Operating Systems, 
+                Data Communication, Software Project Management
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">FEATURED PROJECTS</h2>
+        <div class="projects">
+            <div class="project-item">
+                <div class="project-title">Taskly</div>
+                <div class="project-tech">React • GSAP • Tailwind</div>
+                <div class="project-desc">Modern startup landing page with smooth scroll animations and advanced form validation</div>
+            </div>
+            <div class="project-item">
+                <div class="project-title">Salesly</div>
+                <div class="project-tech">React • Chart.js • PHP</div>
+                <div class="project-desc">Advanced admin dashboard with real-time data visualization and interactive charts</div>
+            </div>
+            <div class="project-item">
+                <div class="project-title">ShopNow</div>
+                <div class="project-tech">React Native • Expo • Firebase</div>
+                <div class="project-desc">Full-featured e-commerce mobile app with product search and cart management</div>
+            </div>
+            <div class="project-item">
+                <div class="project-title">Habitify</div>
+                <div class="project-tech">React Native • AsyncStorage</div>
+                <div class="project-desc">Complete habit-tracking application with user onboarding and progress visualization</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">LEADERSHIP & COMMUNITY</h2>
+        <div class="experience-item">
+            <div class="job-title">Founder & Community Lead – OtakuHub</div>
+            <div class="company">University of Ibadan / Online</div>
+            <div class="duration">2022 – Present</div>
+            <ul class="achievements">
+                <li>Founded and led anime-centered youth movement with 1000+ participants</li>
+                <li>Organized multiple large-scale anime events and community activities</li>
+                <li>Built operational teams (Growth, Content, Engagement)</li>
+                <li>Managed strategy for branding, logistics, and creative direction</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 
